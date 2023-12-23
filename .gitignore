@@ -8,7 +8,7 @@ node_modules
 
 
 # Ignore .env files
-.env
+
 
 # testing
 /coverage
