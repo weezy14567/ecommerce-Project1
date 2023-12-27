@@ -81,7 +81,7 @@ function HomeGrid() {
   useEffect(() => {
     try {
       const fetchAllProd = async () => {
-        const { data } = await axios.get(`${apiUrl}/api/products/allproducts`);
+        const { data } = await axios.get(`https://alsbackend-ruwt.onrender.com/api/products/allproducts`);
         setAllproducts(data);
       };
       fetchAllProd();
