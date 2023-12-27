@@ -66,7 +66,7 @@ function HomeGrid() {
     const fetchDiscountPrice = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const res = await axios.get(`https://alsbackend-ruwt.onrender.com/api/products/random`);
+        const res = await axios.get(`${apiUrl}/api/products/random`);
 
         dispatch({ type: 'FETCH_SUCCESS', payload: res.data });
       } catch (error) {
@@ -81,7 +81,7 @@ function HomeGrid() {
   useEffect(() => {
     try {
       const fetchAllProd = async () => {
-        const { data } = await axios.get(`https://alsbackend-ruwt.onrender.com/api/products/allproducts`);
+        const { data } = await axios.get(`${apiUrl}/api/products/allproducts`);
         setAllproducts(data);
       };
       fetchAllProd();
