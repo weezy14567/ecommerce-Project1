@@ -140,6 +140,8 @@ function PlaceOrder() {
           shippingAddress: shipping,
           subTotal: totalFee,
           paymentMethod: payment,
+        }, {
+          headers:{Authorization:`Bearer ${userInfo?.token}`},
         }
       );
 
