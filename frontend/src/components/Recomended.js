@@ -12,7 +12,7 @@ function Recomended() {
   useEffect(() => {
     const fetchRecommended = async () => {
       try {
-        const { data } = await axios.get(`${apiUrl}/api/products/allproducts`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/allproducts`);
         
         setRecommended(data);
       } catch (error) {
