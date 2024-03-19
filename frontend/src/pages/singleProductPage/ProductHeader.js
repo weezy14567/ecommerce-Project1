@@ -32,7 +32,7 @@ function ProductHeader(props) {
     if (product) {
       const fetchUser = async () => {
         try {
-          const { data } = await axios.get(`${apiUrl}/api/users/${product}`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users/${product}`);
           dispatch(singleUserSuccess(data));
         } catch (error) {
           toast.error('Error', { toastId: 'unique-toast-id', autoClose: 500 });
@@ -45,7 +45,7 @@ function ProductHeader(props) {
 
   const addFollowHandler = async (id, friendId) => {
     try {
-      await axios.put(`${apiUrl}/api/users/addfollows/${id}/${friendId}`);
+      await axios.put(`https://aloservices-ji34.onrender.com/api/users/addfollows/${id}/${friendId}`);
 
       dispatch(addFriends(friendId));
       dispatch(addUserProductFriends(id));
