@@ -39,7 +39,7 @@ function SignUp() {
         email,
         password,
       };
-      const { data } = await axios.post(`${apiUrl}/api/users/signup`, user);
+      const { data } = await axios.post(`https://aloservices-ji34.onrender.com/api/users/signup`, user);
       dispatch(loginSuccess(data));
       navigate('/');
       setLoading(false);
