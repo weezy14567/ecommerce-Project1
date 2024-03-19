@@ -24,7 +24,7 @@ function ProfileShipping(props) {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/shipping/${userInfo?._id}`
+          `https://aloservices-ji34.onrender.com/api/shipping/${userInfo?._id}`
         );
         if (Object.keys(shipping).length === 0) {
           dispatch(shippingSuccess(data));
