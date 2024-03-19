@@ -43,7 +43,7 @@ function Cartscreen() {
 
   const increaseQuantity = async (item, quantity) => {
     try {
-      const { data } = await axios.get(`${apiUrl}/api/products/${item?._id}`);
+      const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/${item?._id}`);
       if (data.countInStock <= quantity) {
         toast.error('Out of stock', { toastId: 'unique-toast-id' });
         return;
@@ -74,7 +74,7 @@ function Cartscreen() {
     if (cartItems?.length > 0) {
       const cartAllUsers = async () => {
         try {
-          const { data } = await axios.get(`${apiUrl}/api/users`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users`);
           setAllUsers(data);
         } catch (error) {
           toast.error('error', { toastId: 'unique-toast-id', autoClose: 500 });
@@ -117,7 +117,7 @@ function Cartscreen() {
 
   const handleWishList = async (id, productId) => {
     try {
-      await axios.put(`${apiUrl}/api/products/${id}/${productId}/wishlist`);
+      await axios.put(`https://aloservices-ji34.onrender.com/api/products/${id}/${productId}/wishlist`);
       dispatch(addWishList(productId));
       if (userInfo?.wishList.includes(productId)) {
         toast.success('Wishlist removed', { toastId: 'unique-toast-id' });
