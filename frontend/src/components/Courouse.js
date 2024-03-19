@@ -49,7 +49,7 @@ function Courouse({ own }) {
       dispatch({ type: 'FETCH_START' });
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/orders/${userInfo?._id}/all`
+          `https://aloservices-ji34.onrender.com/api/orders/${userInfo?._id}/all`
         );
 
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
@@ -66,7 +66,7 @@ function Courouse({ own }) {
       setLoading(true);
       try {
         const cartAllUsers = async () => {
-          const { data } = await axios.get(`${apiUrl}/api/users`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users`);
 
           setAllUsers(data);
         };
@@ -83,7 +83,7 @@ function Courouse({ own }) {
     if (order) {
       try {
         const cartAllUsers = async () => {
-          const { data } = await axios.get(`${apiUrl}/api/users`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users`);
 
           setAllUsers(data);
         };
