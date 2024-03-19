@@ -52,7 +52,7 @@ function PlaceOrder() {
 
   const increaseQuantity = async (item, quantity) => {
     try {
-      const { data } = await axios.get(`${apiUrl}/api/products/${item?._id}`);
+      const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/${item?._id}`);
       if (data.countInStock <= quantity) {
         toast.error('Out of stock', {
           toastId: 'unique-toast-id',
@@ -72,7 +72,7 @@ function PlaceOrder() {
     if (cartItems.length > 0) {
       const cartAllUsers = async () => {
         try {
-          const { data } = await axios.get(`${apiUrl}/api/users`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users`);
           setAllUsers(data);
         } catch (error) {
           toast.error('error', { toastId: 'unique-toast-id', autoClose: 500 });
@@ -102,7 +102,7 @@ function PlaceOrder() {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/shipping/${userInfo?._id}`
+          `https://aloservices-ji34.onrender.com/api/shipping/${userInfo?._id}`
         );
         if (!shipping.name) {
           dispatch(shippingSuccess(data));
@@ -133,7 +133,7 @@ function PlaceOrder() {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        `${apiUrl}/api/orders/${userInfo?._id}`,
+        `https://aloservices-ji34.onrender.com/api/orders/${userInfo?._id}`,
         {
           orderItems: cartItems,
           shippingFee: shippingFee,
