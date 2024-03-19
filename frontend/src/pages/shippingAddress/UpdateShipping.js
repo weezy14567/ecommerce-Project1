@@ -56,7 +56,7 @@ function UpdateShipping(props) {
     };
     try {
       const { data } = await axios.put(
-        `${apiUrl}/api/shipping/${shipping?._id}`,
+        `https://aloservices-ji34.onrender.com/api/shipping/${shipping?._id}`,
         shippingData
       );
 
