@@ -43,7 +43,7 @@ function UserSellerStore() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `${apiUrl}/api/products/userproducts/${userId}`
+          `https://aloservices-ji34.onrender.com/api/products/userproducts/${userId}`
         );
         setUserPost(data);
 
@@ -65,7 +65,7 @@ function UserSellerStore() {
       try {
         setLoading(true);
         const { data } = await axios.get(
-          `${apiUrl}/api/products/${userId}/categories`
+          `https://aloservices-ji34.onrender.com/api/products/${userId}/categories`
         );
         setCategories(data);
 
@@ -100,7 +100,7 @@ function UserSellerStore() {
   const handleDelete = async (productId) => {
     try {
       await axios.delete(
-        `${apiUrl}/api/products/${productId}/delete`,
+        `https://aloservices-ji34.onrender.com/api/products/${productId}/delete`,
 
         {
           headers: {
