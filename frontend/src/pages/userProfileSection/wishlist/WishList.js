@@ -19,11 +19,11 @@ function WishList() {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/products/${userInfo._id}/wishlistproducts`
+          `https://aloservices-ji34.onrender.com/api/products/${userInfo._id}/wishlistproducts`
         );
         setData(data);
         setLoading(false);
-        console.log(data);
+      
       } catch (error) {
         console.log(error);
         setLoading(false);
