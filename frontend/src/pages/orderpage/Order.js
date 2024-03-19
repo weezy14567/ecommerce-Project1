@@ -82,7 +82,7 @@ function Order() {
       try {
         dispatch({ type: 'SUCCESSPAY_START' });
         const { data } = await axios.put(
-          `${apiUrl}/api/orders/${order._id}/pay`,
+          `https://aloservices-ji34.onrender.com/api/orders/${order._id}/pay`,
           details
         );
         dispatch({ type: 'SUCCESS_PAY', payload: data });
@@ -102,7 +102,7 @@ function Order() {
     const fetchOrder = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const { data } = await axios.get(`${apiUrl}/api/orders/${orderId}`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/orders/${orderId}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
        
       } catch (error) {
@@ -117,7 +117,7 @@ function Order() {
       }
     } else {
       const loadPaypalScript = async () => {
-        const { data: clientId } = await axios.get(`${apiUrl}/api/keys/paypal`);
+        const { data: clientId } = await axios.get(`https://aloservices-ji34.onrender.com/api/keys/paypal`);
         payPalDispatch({
           type: 'resetOptions',
           value: { 'client-id': clientId, currency: 'USD' },
@@ -135,7 +135,7 @@ function Order() {
     if (order._id) {
       try {
         const cartAllUsers = async () => {
-          const { data } = await axios.get(`${apiUrl}/api/users`);
+          const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/users`);
 
           setAllUsers(data);
         };
