@@ -136,7 +136,7 @@ function Upload(props) {
             specifications: validSpecifications,
           };
           try {
-            axios.post(`${apiUrl}/api/products`, formdetails).then((res) => {
+            axios.post(`https://aloservices-ji34.onrender.com/api/products`, formdetails).then((res) => {
               setRandom([...random, res.data]);
             });
             setOpen(false);
