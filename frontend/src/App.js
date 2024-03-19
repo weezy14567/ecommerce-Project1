@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     const fetchRandom = async () => {
       try {
-        const { data } = await axios.get(`${apiUrl}/api/products/random`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/random`);
 
         setRandom(data.randomProducts);
         setLoadingApp(false);
