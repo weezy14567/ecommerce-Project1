@@ -37,7 +37,7 @@ function ProductUpdate(props) {
     setLoading(true);
     try {
       await axios.put(
-        `${apiUrl}/api/products/${product._id}/update`,
+        `https://aloservices-ji34.onrender.com/api/products/${product._id}/update`,
         formData,
         {
           headers: {
