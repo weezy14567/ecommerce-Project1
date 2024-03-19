@@ -44,7 +44,7 @@ function OverView(props) {
     const fetchRandom = async () => {
       setLoading(true);
       try {
-        const { data } = await axios.get(`${apiUrl}/api/products/random`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/random`);
         setMostPaidProducts(data.randomProducts);
         setLoading(false);
       } catch (error) {
@@ -64,7 +64,7 @@ function OverView(props) {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/users/${userInfo?._id}`
+          `https://aloservices-ji34.onrender.com/api/users/${userInfo?._id}`
         );
         setUsers(data);
 
