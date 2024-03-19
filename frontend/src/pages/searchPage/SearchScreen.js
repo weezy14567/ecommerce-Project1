@@ -70,7 +70,7 @@ function SearchScreen() {
         dispatch({ type: 'fetchstart' });
 
         const { data } = await axios.get(
-          `${apiUrl}/api/products/search?query=${query}&page=${page}&brand=${brand}&price=${price}&order=${order}`
+          `https://aloservices-ji34.onrender.com/api/products/search?query=${query}&page=${page}&brand=${brand}&price=${price}&order=${order}`
         );
         dispatch({ type: 'fetchsuccess', payload: data });
       } catch (error) {
@@ -86,7 +86,7 @@ function SearchScreen() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(`${apiUrl}/api/products/categories`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/categories`);
         setCategories(data);
       } catch (error) {
         console.error(error);
