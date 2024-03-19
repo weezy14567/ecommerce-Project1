@@ -19,7 +19,7 @@ function Following() {
     const fetchUserFollowingProducts = async () => {
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/products/${userInfo._id}/following`,
+          `https://aloservices-ji34.onrender.com/api/products/${userInfo._id}/following`,
 
           {
             headers: {
