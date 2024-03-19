@@ -42,7 +42,7 @@ function EditProfileInfo() {
         };
 
         const { data } = await axios.put(
-          `${apiUrl}/api/users/update/${userInfo._id}`,
+          `https://aloservices-ji34.onrender.com/api/users/update/${userInfo._id}`,
           formData,
           {
             headers: {
@@ -52,7 +52,7 @@ function EditProfileInfo() {
         );
         setUser(data);
         dispatch(loginSuccess(data));
-        console.log('userData', data);
+       
         navigate('/user/personalinfo');
       } catch (error) {
         console.log(error);
