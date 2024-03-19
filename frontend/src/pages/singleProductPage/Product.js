@@ -45,7 +45,7 @@ function Product(props) {
       try {
         setLoading(true);
 
-        const { data } = await axios.get(`${apiUrl}/api/products/${id}`);
+        const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/${id}`);
         setProduct(data);
         setLoading(false);
       } catch (error) {
@@ -67,7 +67,7 @@ function Product(props) {
         (item) => item?._id === productid
       );
       const quantity = existItem ? existItem?.quantity + 1 : 1;
-      const { data } = await axios.get(`${apiUrl}/api/products/${productid}`);
+      const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/${productid}`);
       if (data?.countInStock < quantity) {
         return toast.error('Out of stock', {
           toastId: 'unique-toast-id',
@@ -103,7 +103,7 @@ function Product(props) {
       const fetchUserProducts = async () => {
         try {
           const { data } = await axios.get(
-            `${apiUrl}/api/products/userproducts/${productId}`
+            `https://aloservices-ji34.onrender.com/api/products/userproducts/${productId}`
           );
 
           setUserProducts(data);
@@ -176,7 +176,7 @@ function Product(props) {
 
   const IncreaseQuantity = async (item, quantity) => {
     try {
-      const { data } = await axios.get(`${apiUrl}/api/products/${item?._id}`);
+      const { data } = await axios.get(`https://aloservices-ji34.onrender.com/api/products/${item?._id}`);
       if (data.countInStock < quantity) {
         return toast.error('Out of stock', {
           toastId: 'unique-toast-id',
@@ -209,7 +209,7 @@ function Product(props) {
 
   const handleWishList = async (id, productId) => {
     try {
-      await axios.put(`${apiUrl}/api/products/${id}/${productId}/wishlist`);
+      await axios.put(`https://aloservices-ji34.onrender.com/api/products/${id}/${productId}/wishlist`);
       dispatch(addWishList(productId));
       if (userInfo?.wishList.includes(product._id)) {
         toast.success('Wishlist removed', { toastId: 'unique-toast-id' });
