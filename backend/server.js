@@ -36,14 +36,14 @@ app.use('/api/update', updateRouter);
 app.use('/api/shipping', shippingRouter);
 app.use('/api/orders', orderRouter);
 
-const connect = () => {
+
   mongoose
     .connect(process.env.MONGO_URL)
     .then(() => {
       console.log('DB connected');
     })
     .catch((err) => console.log(err));
-};
+
 
 const __dirname = path.resolve();
 
@@ -52,5 +52,5 @@ app.use('/api/seed', seedRouter);
 
 app.listen(process.env.PORT, () => {
   console.log('server connected');
-  connect();
+
 });
