@@ -43,7 +43,7 @@ function Profile(props) {
       setLoading(true);
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/users/${userInfo?._id}`,
+          `https://aloservices-ji34.onrender.com/api/users/${userInfo?._id}`,
 
           {
             headers: {
