@@ -59,7 +59,7 @@ function IsellerRegister() {
 
     try {
       axios
-        .put(`${apiUrl}/api/users/update/${userInfo?._id}`, storeData)
+        .put(`https://aloservices-ji34.onrender.com/api/users/update/${userInfo?._id}`, storeData)
         .then((res) => {});
 
       dispatch({ type: 'FETCH_SUCCESS' });
