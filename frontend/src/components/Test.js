@@ -18,7 +18,7 @@ function Test(props) {
       const fetchSearchResults = async () => {
         try {
           const { data } = await axios.get(
-            `${apiUrl}/api/products/searchingproducts?query=${query}`
+            `https://aloservices-ji34.onrender.com/api/products/searchingproducts?query=${query}`
           );
           console.log('search products', data);
           setSearchResults(data);
