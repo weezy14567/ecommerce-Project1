@@ -21,7 +21,7 @@ function OrderSectionSelector() {
     const fetchOrders = async () => {
       try {
         const { data } = await axios.get(
-          `${apiUrl}/api/orders/${userInfo?._id}/allordersNow`
+          `https://aloservices-ji34.onrender.com/api/orders/${userInfo?._id}/allordersNow`
         );
         setOrders(data);
       } catch (error) {
